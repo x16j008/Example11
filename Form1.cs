@@ -16,5 +16,25 @@ namespace Example11
         {
             InitializeComponent();
         }
+
+        private void btnJudge_Click(object sender, EventArgs e)
+        {
+            int Year = int.Parse(tbxYear.Text);
+
+            if (Year % 4 != 0)
+                lblResult.Text = "①平年です";
+            else
+            {
+                if (Year % 100 == 0)
+                {
+                    if (Year % 400 == 0)
+                        lblResult.Text = "②うるう年です";
+                    else
+                        lblResult.Text = "③平年です";
+                }
+                else
+                    lblResult.Text = "④うるう年です";
+            }
+        }
     }
 }
